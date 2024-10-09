@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+<body>
+
+<div class="contenedor">
+
+<h1>Calculadora</h1>
+<div>
+    <input type="number" id="num1" placeholder="primer numero">  
+    <input type="number" id="num2" placeholder="segundo numero">
+</div>
+<br>
+<div>
+    <button onclick="aSumar()"> + </button>
+    <button onclick="aRestar()"> - </button>
+    <button onclick="aMultiplicar()"> x </button>
+    <button onclick="aDividir()"> / </button>
+</div>
+<div class="contenedor1">
+    <button onclick="aRaiz()"> Raiz </button>
+    <button onclick="aPotencia()"> Potencia </button>
+</div>
+<div class="contenedor2">
+    <button onclick="Anegpos()"> Absoluto </button> <!--Si esta negativo cambia a postivo-->
+    <button onclick="Aaleatorio()"> Random </button> <!--numero aleatorio-->
+</div>
+<h1>Resultado</h1>
+<div>
+    <input type="text" id="resultado" readonly>  
+</div> 
+<br>
+<div class="contenedor3">
+    <button onclick="aRendondear()"> Round </button> <!--Redondear un valor a su numero mas alto-->
+    <button onclick="aRedoabajo()"> floor </button> <!--Aproxima abajo-->
+    <button onclick="aRedoarriba()"> Ceil </button> <!--Aproxima hacia arriba-->
+</div>
+<script>
+    function mostrarResultado(valor) {          //El resultado se da cuando agregas el primer y el segundo y al dar click en la operacion que deseas este te muestra el resultado
+        document.getElementById('resultado').value = valor;
+    }
+
+    function obtenerNumeros() {
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        return [num1, num2];
+    }
+
+    function aSumar() {
+        let [num1, num2] = obtenerNumeros();
+        mostrarResultado(num1 + num2);
+    }
+
+    function aRestar() {
+        let [num1, num2] = obtenerNumeros();
+        mostrarResultado(num1 - num2);
+    }
+
+    function aMultiplicar() {
+        let [num1, num2] = obtenerNumeros();
+        mostrarResultado(num1 * num2);
+    }
+
+    function aDividir() {
+        let [num1, num2] = obtenerNumeros();
+        if (num2 !== 0) {
+            mostrarResultado(num1 / num2);
+        } else {
+            mostrarResultado('Error: División por 0');
+        }
+    }
+
+    function aPotencia() {
+        let [num1, num2] = obtenerNumeros();
+        mostrarResultado(Math.pow(num1, num2));
+    }
+
+    function aRaiz() {
+        let num2 = parseFloat(document.getElementById('num2').value);
+        mostrarResultado(Math.sqrt(num2));
+    }
+
+    function Anegpos() {
+        let num2 = parseFloat(document.getElementById('num2').value);
+        mostrarResultado(Math.abs(num2));
+    }
+
+    function Aaleatorio() {
+        let [num1, num2] = obtenerNumeros();
+        let resultado = Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+        mostrarResultado(resultado);
+    }
+
+    function aRendondear() {
+        let resultado = parseFloat(document.getElementById('resultado').value);
+        mostrarResultado(Math.round(resultado));
+    }
+
+    function aRedoabajo() {
+        let resultado = parseFloat(document.getElementById('resultado').value);
+        mostrarResultado(Math.floor(resultado));
+    }
+
+    function aRedoarriba() {  
+        let resultado = parseFloat(document.getElementById('resultado').value); 
+        mostrarResultado(Math.ceil(resultado));
+    }
+</script> 
+</div>
+</body>
+</html>

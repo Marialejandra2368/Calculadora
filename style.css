@@ -1,0 +1,87 @@
+body{
+    background: url(./img/minion-background-tco5c3z0bdksq4zh.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    
+    
+    
+  }
+  h1{
+    text-align: center;
+    font-size: auto;
+    margin-top: 20px;
+    font-family: "Protest Strike", serif;
+  
+    }
+
+    h1{
+        text-align: center;
+        font-size: auto;
+        margin-top: 20px; 
+        font-family: "Protest Strike", serif;
+    }
+    
+  .contenedor {
+    background: aquamarine;
+    height: 580px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1)
+
+
+  }
+  
+  .contenedor input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color:#F0FFFF;
+    border-radius: 5px;
+  }
+  
+  .contenedor button {
+    width: 75px;
+    padding: 18px;
+    margin: 5px 1%;
+    box-sizing: border-box;
+    background-color: #eee;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .contenedor1 button{
+    width: 165px;
+    padding: 18px;
+    margin: 5px 1%;
+    box-sizing: border-box;
+    background-color: #eee;
+    border-radius: 10px;
+  }
+
+  .contenedor2 button{
+    width: 165px;
+    padding: 18px;
+    margin: 5px 1%;
+    box-sizing: border-box;
+    background-color: #eee;
+    border-radius: 10px;
+  }
+
+  .contenedor3 button{
+    width: 110px;
+    padding: 18px;
+    margin: 5px 1%;
+    box-sizing: border-box;
+    background-color: #eee;
+    border-radius: 10px;
+  }
+  
+  .contenedor button:nth-child(odd) {
+    margin-right: 2%;
+  }
